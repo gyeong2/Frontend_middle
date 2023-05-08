@@ -1,0 +1,42 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+  <script src="https://unpkg.com/vue@next"></script>
+  <style>
+    div#box { margin: 20px auto; padding: 20px; width: 300px;
+          border: 1px solid gray; box-shadow: 5px 5px 5px #aaa; }
+    button { width: 100px;  height: 30px; margin: 5px; }
+    p { font-size: 18pt; }
+  </style>
+</head>
+<body>
+    <div id="app">
+     <div id="box" >
+        <h1>exam8</h1>
+        <p>{{ value }}</p>
+        <hr />
+        <button type="button" v-on:click="increase">increase</button>
+        <button type="button" v-on:click="decrease">decrease</button>
+    </div>
+    </div>
+  <script type="text/javascript">
+    let app = {
+      data() {
+        return {
+          value: 0
+        };
+     },
+    methods: {
+        increase() {
+            return this.value++; 
+        },
+        decrease() {
+            return this.value--; 
+        }
+    }
+      
+    };
+    Vue.createApp(app).mount("#app");
+   </script>
+</body>
+</html>
